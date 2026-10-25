@@ -1,6 +1,10 @@
 # Portfolio de Tehua Yann Ivann
 
-Le portfolio complet, avec son code source et une version **déjà compilée pour GitHub Pages**. Le design, les quatre projets, les onze formations et certifications, le parcours, la photo et le CV sont inclus.
+Le portfolio complet, avec son code source et une version **déjà compilée pour GitHub Pages**. Le design, les quatre projets, les onze formations et certifications et le parcours sont inclus.
+
+Site en ligne : https://16blo.github.io/portfolio/
+
+Les coordonnées personnelles (e-mail, téléphone et adresse) sont absentes du site et de ses fichiers publics. La photo et le CV ne sont pas publiés. Le contact se fait par LinkedIn. Le CV nettoyé est conservé séparément dans l’archive privée remise au propriétaire.
 
 ## Mettre le site en ligne sans terminal
 
@@ -73,7 +77,7 @@ git remote add origin https://github.com/16blo/portfolio.git
 git push -u origin main
 ```
 
-Remplace `16blo` par ton vrai identifiant. Si le dépôt contient déjà des fichiers ou des commits, clone-le d’abord et copie ce dossier dedans pour conserver son historique.
+`16blo` est le compte propriétaire de ce dépôt. Si le dépôt contient déjà des fichiers ou des commits, clone-le d’abord et copie ce dossier dedans pour conserver son historique.
 
 ## Où se trouve chaque élément ?
 
@@ -95,7 +99,7 @@ Pour ajouter une étape de parcours ou modifier les compétences, édite `public
 
 ## Choix techniques
 
-React, TypeScript, Vite et Lucide. Le portfolio charge un fichier JSON ; les liens locaux utilisent des chemins relatifs compatibles avec un dépôt `portfolio` ou un domaine GitHub Pages à la racine. Les thèmes, les filtres, les fiches détaillées, la recherche, le menu mobile et le téléchargement du CV fonctionnent sans serveur applicatif.
+React, TypeScript, Vite et Lucide. Le portfolio charge un fichier JSON ; les liens locaux utilisent des chemins relatifs compatibles avec un dépôt `portfolio` ou un domaine GitHub Pages à la racine. Les thèmes, les filtres, les fiches détaillées, la recherche et le menu mobile fonctionnent sans serveur applicatif. Le téléchargement du CV est désactivé dans la version publique actuelle.
 
 Cette version a été adaptée à GitHub Pages à partir du portfolio initial. L’ancien stockage serveur et la connexion ChatGPT ont été remplacés par une préparation locale et un export de fichiers. Aucun compte ChatGPT, base de données, clé API ou jeton GitHub n’est requis pour visiter le site.
 
