@@ -1,0 +1,10 @@
+node_modules/
+.qa/
+.DS_Store
+*.log
+.env
+.env.*
+!.env.example
+.openai/
+
+# docs/ is intentionally committed: GitHub Pages serves it directly.

@@ -1,0 +1,302 @@
+{
+  "profile": {
+    "name": "Tehua Yann Ivann",
+    "headline": "Étudiant en cybersécurité & SSI",
+    "intro": "Étudiant en Licence professionnelle Cybersécurité et Sécurité des Systèmes d’Information à l’INP-HB, EFSPC. J’apprends à relier le matériel, les réseaux et la sécurité des systèmes.",
+    "about": "Mon parcours a commencé par l’électronique et l’informatique à l’ISTCI. Au laboratoire de Lumos CI, j’ai découvert les exigences du diagnostic et de la maintenance de kits solaires autonomes. Aujourd’hui, à l’INP-HB, je développe mes bases en systèmes, réseaux et cybersécurité. Mes projets sont des terrains d’apprentissage : je pratique, j’identifie ce que je comprends et je reprends ce qui reste à consolider.",
+    "email": "",
+    "location": "",
+    "linkedin": "https://www.linkedin.com/in/yann-ivann-tehua/",
+    "cv": "",
+    "photo": ""
+  },
+  "projects": [
+    {
+      "id": "proxmox",
+      "title": "Un laboratoire d’infrastructure segmentée",
+      "category": "Systèmes & réseaux",
+      "summary": "Relier virtualisation, administration Linux et segmentation réseau dans un environnement de PME simulé.",
+      "date": "2026-10",
+      "tags": [
+        "Proxmox VE",
+        "VLAN",
+        "Linux",
+        "KVM"
+      ],
+      "context": "Projet académique en équipe · CSSI",
+      "details": "Participation à un laboratoire Proxmox VE sur deux nœuds virtualisés. Configuration de machines virtuelles et de ponts Linux, organisation des réseaux par VLAN et séparation des environnements de gestion, de serveurs, de DMZ et de stockage.",
+      "learning": "Comprendre le rôle des ponts réseau et des VLAN, l’isolation des services et les échanges entre réseaux. Le laboratoire reste un environnement de formation.",
+      "image": "",
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7511879219505991680/",
+      "visible": true,
+      "art": "network"
+    },
+    {
+      "id": "web-auth",
+      "title": "Du formulaire à la base de données",
+      "category": "Sécurité web",
+      "summary": "Un laboratoire d’authentification pour comprendre le chemin d’une requête, du navigateur à MariaDB.",
+      "date": "2026-07",
+      "tags": [
+        "Nginx",
+        "PHP-FPM",
+        "MariaDB",
+        "PDO"
+      ],
+      "context": "Laboratoire personnel · publié sur LinkedIn",
+      "details": "Configuration de Nginx et PHP-FPM sous Linux, création d’une base MariaDB et d’un compte dédié, puis liaison d’un formulaire HTML à un traitement PHP. Utilisation de requêtes préparées avec PDO et gestion des réponses de succès ou d’échec.",
+      "learning": "Mettre en pratique la séparation des composants web, les droits d’accès à une base et la prévention des injections SQL avec des requêtes préparées. Un exercice d’apprentissage, à approfondir avant un usage en production.",
+      "image": "",
+      "link": "https://www.linkedin.com/feed/update/urn:li:activity:7487518344271564800/",
+      "visible": true,
+      "art": "code"
+    },
+    {
+      "id": "linux",
+      "title": "Comprendre et administrer Linux",
+      "category": "Systèmes & réseaux",
+      "summary": "Utilisateurs, permissions, services et ports : reprendre les fondamentaux avec des manipulations concrètes.",
+      "date": "2026-10",
+      "tags": [
+        "Linux",
+        "Permissions",
+        "SSH",
+        "Nginx"
+      ],
+      "context": "Travaux pratiques · environnement Linux",
+      "details": "Manipulation des permissions sur les fichiers, vérification des services Nginx et SSH, et observation des ports en écoute avec les outils du système. Travail dans un environnement Linux de formation.",
+      "learning": "Associer chaque commande à son effet, vérifier les droits et reconnaître les services exposés. L’objectif est de comprendre les résultats avant d’automatiser.",
+      "image": "",
+      "link": "",
+      "visible": true,
+      "art": "terminal"
+    },
+    {
+      "id": "arduino",
+      "title": "L’électronique par l’expérimentation",
+      "category": "Électronique",
+      "summary": "Passer du schéma au prototype avec Proteus, Arduino et les instruments de laboratoire.",
+      "date": "2025",
+      "tags": [
+        "Arduino",
+        "Proteus",
+        "Langage C",
+        "Diagnostic"
+      ],
+      "context": "Projets et travaux pratiques · BTS SEI",
+      "details": "Réalisation de projets Arduino, création de schémas et simulation de circuits avec Proteus. Manipulation du multimètre et de l’oscilloscope lors des travaux pratiques en électronique et en maintenance.",
+      "learning": "Lire un schéma, relier le comportement d’un circuit au programme et vérifier les résultats par la mesure. Ces bases accompagnent mon évolution vers les systèmes et la cybersécurité.",
+      "image": "",
+      "link": "",
+      "visible": true,
+      "art": "circuit"
+    }
+  ],
+  "certificates": [
+    {
+      "id": "opswat-fundamentals",
+      "title": "Cybersecurity Fundamentals Associate",
+      "issuer": "OPSWAT Academy",
+      "category": "Cybersécurité",
+      "date": "2026-10",
+      "expires": "2027-09",
+      "link": "https://learn.opswatacademy.com/certificate/HuiXeAUc1g",
+      "attachment": "",
+      "visible": true
+    },
+    {
+      "id": "opswat-cip",
+      "title": "Introduction to CIP",
+      "issuer": "OPSWAT Academy",
+      "category": "Cybersécurité",
+      "date": "2026-10",
+      "expires": "2027-09",
+      "link": "https://learn.opswatacademy.com/certificate/BYJb4vBIiw",
+      "attachment": "",
+      "visible": true
+    },
+    {
+      "id": "cisco-packet-tracer",
+      "title": "Introduction to Packet Tracer",
+      "issuer": "Cisco Networking Academy",
+      "category": "Réseaux",
+      "date": "2025-02",
+      "expires": "",
+      "link": "https://www.linkedin.com/in/yann-ivann-tehua/details/certifications/",
+      "attachment": "",
+      "visible": true
+    },
+    {
+      "id": "copilot-365",
+      "title": "Découvrir Microsoft 365 Copilot",
+      "issuer": "LinkedIn Learning",
+      "category": "Outils & IA",
+      "date": "2025-09",
+      "expires": "",
+      "link": "https://www.linkedin.com/in/yann-ivann-tehua/details/certifications/",
+      "attachment": "",
+      "visible": true
+    },
+    {
+      "id": "ia-generative",
+      "title": "Découvrir l’IA générative",
+      "issuer": "LinkedIn Learning",
+      "category": "Outils & IA",
+      "date": "2025-09",
+      "expires": "",
+      "link": "https://www.linkedin.com/in/yann-ivann-tehua/details/certifications/",
+      "attachment": "",
+      "visible": true
+    },
+    {
+      "id": "ia-recherche",
+      "title": "L’IA générative : les bonnes pratiques de la recherche en ligne",
+      "issuer": "LinkedIn Learning",
+      "category": "Outils & IA",
+      "date": "2025-09",
+      "expires": "",
+      "link": "https://www.linkedin.com/in/yann-ivann-tehua/details/certifications/",
+      "attachment": "",
+      "visible": true
+    },
+    {
+      "id": "copilot-travail",
+      "title": "Simplifiez votre travail avec Microsoft Copilot",
+      "issuer": "LinkedIn Learning",
+      "category": "Outils & IA",
+      "date": "2025-09",
+      "expires": "",
+      "link": "https://www.linkedin.com/in/yann-ivann-tehua/details/certifications/",
+      "attachment": "",
+      "visible": true
+    },
+    {
+      "id": "ethique-ia",
+      "title": "L’éthique à l’ère de l’IA générative",
+      "issuer": "LinkedIn Learning",
+      "category": "Outils & IA",
+      "date": "2025-09",
+      "expires": "",
+      "link": "https://www.linkedin.com/in/yann-ivann-tehua/details/certifications/",
+      "attachment": "",
+      "visible": true
+    },
+    {
+      "id": "fondements-ia",
+      "title": "Les fondements de l’intelligence artificielle",
+      "issuer": "LinkedIn Learning",
+      "category": "Outils & IA",
+      "date": "2025-09",
+      "expires": "",
+      "link": "https://www.linkedin.com/in/yann-ivann-tehua/details/certifications/",
+      "attachment": "",
+      "visible": true
+    },
+    {
+      "id": "excel-tcd",
+      "title": "Excel pour les débutants : les tableaux croisés dynamiques",
+      "issuer": "LinkedIn Learning",
+      "category": "Outils & IA",
+      "date": "2025-09",
+      "expires": "",
+      "link": "https://www.linkedin.com/in/yann-ivann-tehua/details/certifications/",
+      "attachment": "",
+      "visible": true
+    },
+    {
+      "id": "video-mobile",
+      "title": "La création vidéo sur smartphone",
+      "issuer": "LinkedIn Learning",
+      "category": "Outils & IA",
+      "date": "2025-09",
+      "expires": "",
+      "link": "https://www.linkedin.com/in/yann-ivann-tehua/details/certifications/",
+      "attachment": "",
+      "visible": true
+    }
+  ],
+  "timeline": [
+    {
+      "period": "Sept. 2022 – juil. 2023",
+      "label": "Les bases scientifiques",
+      "title": "Baccalauréat scientifique série D",
+      "place": "CSM John Wesley · Angré Béssikoi",
+      "text": "Un socle en mathématiques, physique-chimie et sciences, avant de choisir un parcours technique.",
+      "type": "formation"
+    },
+    {
+      "period": "Oct. 2023 – août 2025",
+      "label": "Du matériel au logiciel",
+      "title": "BTS Systèmes électroniques et informatiques",
+      "place": "ISTCI · Abidjan",
+      "text": "Admis au BTS. Électronique, maintenance, algorithmique, langage C, bases de données et simulation réseau.",
+      "type": "formation"
+    },
+    {
+      "period": "Oct. 2025 – mars 2026",
+      "label": "L’expérience du terrain",
+      "title": "Stagiaire technicien en maintenance électronique",
+      "place": "Lumos CI / Lumos Global · Abidjan",
+      "text": "Diagnostic et maintenance de kits solaires autonomes et de batteries, soudure, tests et participation au contrôle qualité en laboratoire.",
+      "type": "experience"
+    },
+    {
+      "period": "Mars 2026 – juin 2027",
+      "label": "Vers la cybersécurité",
+      "title": "Licence professionnelle Cybersécurité & SSI",
+      "place": "INP-HB · EFSPC",
+      "text": "Administration Linux et Windows Server, réseaux, sécurité des systèmes et travaux pratiques en virtualisation et développement.",
+      "type": "current"
+    }
+  ],
+  "skills": [
+    {
+      "title": "Systèmes & réseaux",
+      "icon": "server",
+      "desc": "Bases et travaux pratiques",
+      "items": [
+        "Linux · Windows Server",
+        "Utilisateurs et permissions",
+        "TCP/IP · IPv4 / IPv6",
+        "Proxmox VE · VLAN",
+        "Cisco Packet Tracer"
+      ]
+    },
+    {
+      "title": "Développement",
+      "icon": "code",
+      "desc": "Apprendre en construisant",
+      "items": [
+        "Bases en C · HTML · CSS",
+        "SQL · MariaDB",
+        "PHP / PDO en laboratoire",
+        "Algorithmique",
+        "Arduino C"
+      ]
+    },
+    {
+      "title": "Électronique",
+      "icon": "cpu",
+      "desc": "Mon premier terrain technique",
+      "items": [
+        "Diagnostic et maintenance",
+        "Soudure · multimètre",
+        "Oscilloscope",
+        "Proteus · Arduino",
+        "Câblage RJ45 · dépannage PC"
+      ]
+    },
+    {
+      "title": "Outils & langues",
+      "icon": "tools",
+      "desc": "Un apprentissage continu",
+      "items": [
+        "Word · Excel et TCD",
+        "VSCodium · Packet Tracer",
+        "Français : langue maternelle",
+        "Anglais : notions de base",
+        "Allemand : notions de base"
+      ]
+    }
+  ]
+}
