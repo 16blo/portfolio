@@ -12,6 +12,21 @@
   },
   "projects": [
     {
+      "id": "f12b3c709558cea99ebc56cb2a3faea3",
+      "title": "Merise",
+      "category": "Électronique",
+      "summary": "welcome sur mon portfolio prive",
+      "date": "2026-10",
+      "tags": [],
+      "context": "Projet personnel",
+      "details": "",
+      "learning": "",
+      "image": "",
+      "link": "",
+      "visible": true,
+      "art": "code"
+    },
+    {
       "id": "proxmox",
       "title": "Un laboratoire d’infrastructure segmentée",
       "category": "Systèmes & réseaux",
