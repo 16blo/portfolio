@@ -20,7 +20,7 @@ Le code est prêt à être hébergé sur un serveur Node.js 24. Il n'est pas act
 3. Dans GitHub → Settings → Developer settings → OAuth Apps, enregistrer une application personnelle avec cette URL comme Homepage et **cette même URL suivie de `/auth/callback`** comme Authorization callback URL.
 4. Dans les variables secrètes du service Render, renseigner `GITHUB_CLIENT_ID` et `GITHUB_CLIENT_SECRET`. Ne jamais les envoyer dans un chat ni les enregistrer dans le dépôt.
 5. Créer un personal access token **fine-grained**, avec expiration, propriétaire `16blo`, dépôt sélectionné **portfolio uniquement**, et Contents en lecture/écriture. Le placer dans `GITHUB_CONTENT_TOKEN` sur Render. Il est distinct du jeton utilisé par ChatGPT et ne doit pas être partagé dans un chat. Si le jeton expire, le remplacer dans Render.
-6. `SESSION_SECRET` est généré par Render ; hors Render, utiliser au moins 48 caractères aléatoires. Le serveur reste fermé tant que sa configuration est incomplète.
+6. `SESSION_SECRET` est généré par Render ; hors Render, utiliser un secret de 32 octets aléatoires, encodé sur au moins 43 caractères (le générateur Render convient). Le serveur reste fermé tant que sa configuration est incomplète.
 7. Déployer, tester la connexion propriétaire, vérifier le refus d'un autre compte puis publier une vraie fiche et contrôler le résultat sur GitHub Pages. Ne pas annoncer l'activation avant ces vérifications.
 
 La création de l'application et des identifiants doit être effectuée par le propriétaire dans les interfaces sécurisées. L'URL finale du dashboard sera ajoutée au portfolio uniquement après activation vérifiée.
