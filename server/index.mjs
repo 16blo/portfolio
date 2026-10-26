@@ -37,7 +37,7 @@ export const server=createServer(async(req,res)=>{
  const redirect=(url,extra={})=>{res.writeHead(302,{...headers,Location:url,...extra});res.end();};
  try{
  const url=new URL(req.url,'http://localhost');const path=url.pathname;
- if(path==='/healthz')return send(200,{status:'ok'});
+ if(path==='/healthz')return send(200,{status:'ok',configuration:{origin:/^https:\/\/[^/]+$/.test(origin),githubClientId:Boolean(env.GITHUB_CLIENT_ID),githubClientSecret:Boolean(env.GITHUB_CLIENT_SECRET),publicationToken:Boolean(env.GITHUB_CONTENT_TOKEN),sessionSecret:Boolean(env.SESSION_SECRET?.length>=43)}});
  if((path.startsWith('/api/')||path.startsWith('/auth/'))&&!configured())return send(503,{error:'Dashboard non activé : configuration de connexion requise.'});
  if(path==='/auth/github'&&req.method==='GET'){const state=random(),verifier=random();const value=sign({state,verifier},env.SESSION_SECRET,600);const u=new URL('https://github.com/login/oauth/authorize');for(const [k,v]of Object.entries({client_id:env.GITHUB_CLIENT_ID,redirect_uri:origin+'/auth/callback',state,scope:'',allow_signup:'false',code_challenge:createHash('sha256').update(verifier).digest('base64url'),code_challenge_method:'S256'}))u.searchParams.set(k,v);return redirect(u.href,{'Set-Cookie':cookie('oauth',value,600)});}
  if(path==='/auth/callback'&&req.method==='GET'){
