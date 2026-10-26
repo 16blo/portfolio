@@ -10,7 +10,7 @@ const repo='16blo/portfolio';
 const base=resolve(dirname(fileURLToPath(import.meta.url)),'../admin-dist');
 const env=process.env;
 const origin=env.APP_ORIGIN || (env.RENDER_EXTERNAL_HOSTNAME?'https://'+env.RENDER_EXTERNAL_HOSTNAME:'');
-const configured=()=>/^https:\/\/[^/]+$/.test(origin)&&env.GITHUB_CLIENT_ID&&env.GITHUB_CLIENT_SECRET&&env.GITHUB_CONTENT_TOKEN&&env.SESSION_SECRET?.length>=48;
+const configured=()=>/^https:\/\/[^/]+$/.test(origin)&&env.GITHUB_CLIENT_ID&&env.GITHUB_CLIENT_SECRET&&env.GITHUB_CONTENT_TOKEN&&env.SESSION_SECRET?.length>=43;
 const headers={'Cache-Control':'no-store','X-Content-Type-Options':'nosniff','X-Frame-Options':'DENY','Referrer-Policy':'no-referrer','Content-Security-Policy':"default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' blob: https://16blo.github.io; connect-src 'self'; object-src 'none'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",'Strict-Transport-Security':'max-age=31536000'};
 async function gh(path,options={},token=env.GITHUB_CONTENT_TOKEN) { const r=await fetch('https://api.github.com/'+path,{...options,headers:{Accept:'application/vnd.github+json','User-Agent':'Tehua-Portfolio-Admin','Authorization':'Bearer '+token,'Content-Type':'application/json'},signal:AbortSignal.timeout(20000)});if(!r.ok)throw Object.assign(new Error('GitHub a refusé la requête.'),{status:r.status===409||r.status===422?409:502});return r.json(); }
 const api=(path,options)=>gh('repos/'+repo+'/'+path,options);
