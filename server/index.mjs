@@ -12,7 +12,7 @@ const env=process.env;
 const origin=env.APP_ORIGIN || (env.RENDER_EXTERNAL_HOSTNAME?'https://'+env.RENDER_EXTERNAL_HOSTNAME:'');
 const configured=()=>/^https:\/\/[^/]+$/.test(origin)&&env.GITHUB_CLIENT_ID&&env.GITHUB_CLIENT_SECRET&&env.GITHUB_CONTENT_TOKEN&&env.SESSION_SECRET?.length>=43;
 const headers={'Cache-Control':'no-store','X-Content-Type-Options':'nosniff','X-Frame-Options':'DENY','Referrer-Policy':'no-referrer','Content-Security-Policy':"default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' blob: https://16blo.github.io; connect-src 'self'; object-src 'none'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",'Strict-Transport-Security':'max-age=31536000'};
-async function gh(path,options={},token=env.GITHUB_CONTENT_TOKEN) { const r=await fetch('https://api.github.com/'+path,{...options,headers:{Accept:'application/vnd.github+json','User-Agent':'Tehua-Portfolio-Admin','Authorization':'Bearer '+token,'Content-Type':'application/json'},signal:AbortSignal.timeout(20000)});if(!r.ok)throw Object.assign(new Error('GitHub a refusé la requête.'),{status:r.status===409||r.status===422?409:502});return r.json(); }
+async function gh(path,options={},token=env.GITHUB_CONTENT_TOKEN) { const r=await fetch('https://api.github.com/'+path,{...options,headers:{Accept:'application/vnd.github+json','User-Agent':'Tehua-Portfolio-Admin','Authorization':'Bearer '+token,'Content-Type':'application/json'},signal:AbortSignal.timeout(20000)});if(!r.ok)throw Object.assign(new Error('GitHub a refusé la requête.'),{status:r.status===409||r.status===422?409:502,githubStatus:r.status});return r.json(); }
 const api=(path,options)=>gh('repos/'+repo+'/'+path,options);
 const post=(path,body)=>api(path,{method:'POST',body:JSON.stringify(body)});
 async function snapshot(){const ref=await api('git/ref/heads/main');const revision=ref.object.sha;const commit=await api('git/commits/'+revision);const f=await api('contents/public/portfolio.json?ref='+revision);return {revision,tree:commit.tree.sha,data:validatePortfolio(JSON.parse(Buffer.from(f.content,'base64')))};}
@@ -58,6 +58,6 @@ export const server=createServer(async(req,res)=>{
  // Only built UI files are served. No source, environment files or repository browsing.
  const name=path==='/'?'admin.html':path.slice(1);if(!/^(?:admin\.html|assets\/[A-Za-z0-9_.-]+\.(?:js|css)|favicon\.svg)$/.test(name))return send(404,{error:'Introuvable.'});
  const target=resolve(base,name);if(!target.startsWith(base+sep))return send(404,{error:'Introuvable.'});const bytes=await readFile(target);res.writeHead(200,{...headers,'Content-Type':({'.html':'text/html; charset=utf-8','.js':'application/javascript','.css':'text/css','.svg':'image/svg+xml'})[extname(name)]});res.end(bytes);
- }catch(e){send(e.status||500,{error:e.status===409?e.message:e.status===400||e.status===413?e.message:'Opération indisponible. Réessaie plus tard.'});}
+ }catch(e){console.error('Dashboard request failed',JSON.stringify({route:req.url?.split('?')[0],status:e.status||500,githubStatus:e.githubStatus||null,errorType:e.name}));send(e.status||500,{error:e.status===409?e.message:e.status===400||e.status===413?e.message:'Opération indisponible. Réessaie plus tard.'});}
 });
 if(process.argv[1]===fileURLToPath(import.meta.url))server.listen(Number(env.PORT||3000),'0.0.0.0');
