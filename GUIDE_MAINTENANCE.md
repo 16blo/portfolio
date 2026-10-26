@@ -1,0 +1,59 @@
+# Maintenance du portfolio
+
+## Développement local
+
+Node.js 22.13 ou plus récent est nécessaire.
+
+```sh
+npm ci
+npm run dev
+```
+
+Ouvrir l’adresse locale indiquée par Vite.
+
+## Ajouter ou modifier une fiche
+
+L’atelier de préparation est disponible **uniquement en local**, au chemin `/editeur.html` de l’adresse affichée par Vite. Il n’est pas publié sur GitHub Pages.
+
+1. Ajouter les projets ou certifications dans les formulaires.
+2. Vérifier l’aperçu et conserver une sauvegarde locale.
+3. Utiliser « Exporter pour GitHub » et décompresser le ZIP.
+4. Se connecter à un compte autorisé sur ce dépôt.
+5. Déposer les dossiers `docs` et `public` de la mise à jour à la racine du dépôt, puis valider le commit.
+
+Les données peuvent également être modifiées dans `public/portfolio.json`. Pour une modification sans compilation, reporter les mêmes changements dans `docs/portfolio.json`.
+
+## Modifier le site et compiler
+
+```sh
+npm run build
+npm test
+```
+
+La compilation produit le site de consultation dans `docs`. Elle exclut l’atelier local et le stockage des préparations. Publier le code modifié et le dossier compilé après vérification.
+
+## Hébergement
+
+GitHub Pages utilise la branche `main` et le dossier `/docs`, avec HTTPS.
+
+## Organisation
+
+| Emplacement | Rôle |
+| --- | --- |
+| `src/portfolio.tsx`, `src/main.tsx` | Interface publique |
+| `src/style.css` | Styles, thèmes et mise en page |
+| `public/portfolio.json` | Données de référence |
+| `docs/` | Site compilé et données publiées |
+| `editeur.html`, `src/editor-main.tsx`, `src/editor.tsx` | Atelier local |
+| `src/workspace.ts`, `src/zip.ts` | Sauvegardes et export des mises à jour |
+| `src/validation.ts`, `src/assets.ts` | Validation du contenu et des fichiers |
+
+## Confidentialité et publication
+
+Les coordonnées personnelles ne doivent pas être ajoutées aux données publiques. Les sauvegardes privées et documents contenant des coordonnées restent en dehors du dépôt.
+
+Un visiteur ne peut pas modifier le site publié depuis le portfolio. La publication exige une connexion GitHub et des droits d’écriture sur le dépôt. Les fichiers publics et leur historique restent consultables.
+
+Les pièces jointes acceptées par l’atelier sont les images PNG, JPEG et WebP et les PDF, avec une limite de 5 Mo par fichier. Vérifier leur contenu avant toute publication.
+
+Le détail technique des protections se trouve dans [SECURITE.md](SECURITE.md).
