@@ -4,6 +4,7 @@ import { fileURLToPath } from "node:url";
 
 export default defineConfig({
   // This static portfolio has no runtime secrets or environment configuration.
+  server: { allowedHosts: ["terminal.local"] },
   envDir: false,
   envPrefix: [],
   plugins: [react(), {

@@ -28,3 +28,28 @@
 @media(max-width:640px){.publishing-panel{padding:23px 20px;margin-bottom:29px;gap:20px}.publishing-panel h2{font-size:22px;line-height:1.3}.publishing-panel p:not(.section-index){font-size:10px}.publishing-actions{flex-direction:column;align-items:stretch}.publishing-actions .button{white-space:normal}.dash-sidebar-title{font-size:7px;letter-spacing:.8px}.publishing-actions .text-button{justify-content:center;font-size:9px}.preview-banner{font-size:10px;padding:12px 18px}.preview-banner a{display:block;margin:5px 0 0}.footer-right{flex-wrap:wrap;gap:12px}.footer-right>a{font-size:8px}}
 
 .github-publish{border:1px solid rgba(var(--accent-rgb),.45);background:rgba(var(--accent-rgb),.09);color:var(--accent);white-space:normal;max-width:300px}.github-publish:hover{background:rgba(var(--accent-rgb),.15)}.footer-right{flex-wrap:wrap}.footer-right>a{display:inline-flex;align-items:center;gap:7px}.publishing-panel{grid-template-columns:1fr minmax(220px,300px)}@media(max-width:1100px){.publishing-panel{grid-template-columns:1fr}.github-publish{max-width:none}}
+
+/* A duplicated, equal-width group produces a seamless right-to-left ticker. */
+.milestones-strip>.ticker-shell{display:flex;gap:30px;padding-block:24px}
+.ticker-heading{flex:0 0 138px;display:flex;flex-direction:column;gap:10px;align-items:flex-start}
+.ticker-heading .strip-caption{display:block}
+.ticker-toggle{display:flex;align-items:center;gap:12px;background:transparent;color:var(--muted);border:1px solid var(--line);border-radius:20px;padding:6px 12px;font-size:10px}
+.ticker-toggle:hover{color:var(--accent);border-color:var(--accent)}
+.ticker-window{min-width:0;flex:1;overflow:hidden;mask-image:linear-gradient(to right,transparent,#000 28px,#000 calc(100% - 28px),transparent)}
+.ticker-track{display:flex;width:max-content;animation:milestone-scroll 32s linear infinite;will-change:transform}
+.ticker-group{list-style:none;display:flex;align-items:center;flex-shrink:0;gap:52px;padding:0 52px 0 0;margin:0}
+.milestone-item{display:flex;align-items:center;gap:18px;flex:0 0 300px;min-height:78px}
+.milestone-logo{width:130px;height:66px;flex-shrink:0;display:grid;place-items:center;background:#fff;border:1px solid #e4e8ed;border-radius:10px;padding:9px}
+.milestone-logo img{width:100%;height:100%;object-fit:contain}
+.milestone-inphb .milestone-logo img{max-width:54px}
+.milestone-lumos .milestone-logo{background:#ffcf01;border-color:#ffcf01}
+.milestone-logo .istci-wordmark{font-size:27px;color:#153e78;letter-spacing:1px;border-bottom:3px solid #e88d29;line-height:1.3}
+.milestone-copy{white-space:nowrap}
+.milestones-strip .milestone-copy strong{font-size:14px;letter-spacing:-.2px}
+.milestones-strip .milestone-copy small{font-size:10px;margin-top:5px}
+.ticker-track.is-paused,.ticker-window:hover .ticker-track{animation-play-state:paused}
+@keyframes milestone-scroll{to{transform:translateX(-50%)}}
+@media(max-width:640px){.milestones-strip>.ticker-shell{display:flex;gap:12px;width:100%;padding:18px 0}.ticker-heading{flex-basis:68px;padding-left:12px}.ticker-heading .strip-caption{display:none}.ticker-toggle{font-size:9px;gap:4px;padding:6px 8px}.ticker-group{gap:28px;padding-right:28px}.milestone-item{flex-basis:265px;gap:12px}.milestone-logo{width:112px;height:60px}.ticker-track{animation-duration:38s}}
+@media(prefers-reduced-motion:reduce){.ticker-toggle{display:none}.ticker-window{mask-image:none;overflow:visible}.ticker-track{width:auto;display:block;will-change:auto}.ticker-group{flex-wrap:wrap;gap:24px;padding:0}.ticker-group[aria-hidden="true"]{display:none}.milestone-item{flex:1 1 265px}.milestones-strip>.ticker-shell{align-items:flex-start}.ticker-heading{flex-basis:100px}}
+
+.milestone-opswat .milestone-logo{background:#102433;border-color:#294354}
