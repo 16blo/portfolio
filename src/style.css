@@ -53,3 +53,6 @@
 @media(prefers-reduced-motion:reduce){.ticker-toggle{display:none}.ticker-window{mask-image:none;overflow:visible}.ticker-track{width:auto;display:block;will-change:auto}.ticker-group{flex-wrap:wrap;gap:24px;padding:0}.ticker-group[aria-hidden="true"]{display:none}.milestone-item{flex:1 1 265px}.milestones-strip>.ticker-shell{align-items:flex-start}.ticker-heading{flex-basis:100px}}
 
 .milestone-opswat .milestone-logo{background:#102433;border-color:#294354}
+
+.milestone-logo img{height:46px;max-height:46px;min-height:0}
+@media(max-width:640px){.milestone-logo img{height:40px;max-height:40px}}
