@@ -67,3 +67,7 @@ Les fichiers `.env*`, clés privées, identifiants locaux, bases et sauvegardes 
 `npm run security:files` inspecte les fichiers suivis et le contenu des dossiers publics. Cette vérification s’exécute aussi avant `npm run build`. Sur GitHub, le workflow de sécurité examine les fichiers et l’historique à chaque push ou proposition de modification, avec des permissions en lecture seule.
 
 Une règle `.gitignore` ne retire pas un secret déjà publié. Si une clé est exposée, la révoquer auprès du fournisseur, la remplacer et traiter l’historique. Le contrôle reconnaît certains formats de secrets ; il ne garantit pas la détection de tout contenu confidentiel. Un contrôle CI intervient après un envoi et ne remplace pas la vigilance avant publication.
+
+## Dashboard avec connexion GitHub
+
+Un dashboard serveur est préparé dans `admin.html`, `src/admin-main.tsx` et `server/`. Il est séparé du site public et de l'atelier local. Son activation et ses limites sont décrites dans [DASHBOARD.md](DASHBOARD.md). Il ne faut pas publier `editeur.html` sur GitHub Pages pour l'activer.

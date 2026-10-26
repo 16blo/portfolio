@@ -13,7 +13,10 @@
     "check": "tsc --noEmit",
     "test": "node --test tests/security.test.mjs tests/secret-files.test.mjs",
     "build": "npm run check && vite build",
-    "preview": "vite preview --host 127.0.0.1"
+    "preview": "vite preview --host 127.0.0.1",
+    "build:admin": "npm run security:files && npm run check && vite build --config vite.admin.config.ts",
+    "start:admin": "node server/index.mjs",
+    "test:admin": "node --test tests/admin.test.mjs"
   },
   "dependencies": {
     "lucide-react": "1.31.0",

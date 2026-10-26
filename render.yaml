@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: tehua-portfolio-dashboard
+    runtime: node
+    plan: free
+    buildCommand: npm ci && npm run security:files && npm run build:admin
+    startCommand: npm run start:admin
+    healthCheckPath: /healthz
+    autoDeployTrigger: off
+    envVars:
+      - key: NODE_VERSION
+        value: 24
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: GITHUB_CLIENT_ID
+        sync: false
+      - key: GITHUB_CLIENT_SECRET
+        sync: false
+      - key: GITHUB_CONTENT_TOKEN
+        sync: false

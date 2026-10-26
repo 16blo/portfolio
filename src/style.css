@@ -56,3 +56,5 @@
 
 .milestone-logo img{height:46px;max-height:46px;min-height:0}
 @media(max-width:640px){.milestone-logo img{height:40px;max-height:40px}}
+
+.owner-session{display:flex;align-items:center;justify-content:flex-end;gap:18px;padding:12px 24px;background:var(--panel);border-bottom:1px solid var(--line);position:relative;z-index:4}.owner-session>span{display:flex;gap:8px;align-items:center;color:var(--accent);font-size:12px}.owner-session .button{font-size:11px;padding:8px 12px}

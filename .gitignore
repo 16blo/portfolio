@@ -39,3 +39,5 @@ tmp/
 .openai/
 
 # docs/ is intentionally committed: GitHub Pages serves it directly.
+
+admin-dist/
