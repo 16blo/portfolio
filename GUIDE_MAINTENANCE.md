@@ -57,3 +57,13 @@ Un visiteur ne peut pas modifier le site publié depuis le portfolio. La publica
 Les pièces jointes acceptées par l’atelier sont les images PNG, JPEG et WebP et les PDF, avec une limite de 5 Mo par fichier. Vérifier leur contenu avant toute publication.
 
 Le détail technique des protections se trouve dans [SECURITE.md](SECURITE.md).
+
+## Fichiers locaux et secrets
+
+Aucun fichier `.env` ni aucune clé API n’est nécessaire au fonctionnement de ce portfolio. Le chargement des fichiers d’environnement et l’exposition des variables personnalisées dans Vite sont désactivés.
+
+Les fichiers `.env*`, clés privées, identifiants locaux, bases et sauvegardes sont exclus du suivi Git. Ils ne doivent jamais être placés dans `public` ou `docs`.
+
+`npm run security:files` inspecte les fichiers suivis et le contenu des dossiers publics. Cette vérification s’exécute aussi avant `npm run build`. Sur GitHub, le workflow de sécurité examine les fichiers et l’historique à chaque push ou proposition de modification, avec des permissions en lecture seule.
+
+Une règle `.gitignore` ne retire pas un secret déjà publié. Si une clé est exposée, la révoquer auprès du fournisseur, la remplacer et traiter l’historique. Le contrôle reconnaît certains formats de secrets ; il ne garantit pas la détection de tout contenu confidentiel. Un contrôle CI intervient après un envoi et ne remplace pas la vigilance avant publication.

@@ -7,9 +7,11 @@
     "node": ">=22.13.0"
   },
   "scripts": {
+    "security:files": "node scripts/check-sensitive-files.mjs",
+    "prebuild": "npm run security:files",
     "dev": "vite --host 127.0.0.1",
     "check": "tsc --noEmit",
-    "test": "node --test tests/security.test.mjs",
+    "test": "node --test tests/security.test.mjs tests/secret-files.test.mjs",
     "build": "npm run check && vite build",
     "preview": "vite preview --host 127.0.0.1"
   },

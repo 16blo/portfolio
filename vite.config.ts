@@ -3,6 +3,9 @@ import react from "@vitejs/plugin-react";
 import { fileURLToPath } from "node:url";
 
 export default defineConfig({
+  // This static portfolio has no runtime secrets or environment configuration.
+  envDir: false,
+  envPrefix: [],
   plugins: [react(), {
     name: "portfolio-security-policy",
     transformIndexHtml: {
