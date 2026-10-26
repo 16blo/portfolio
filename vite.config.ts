@@ -24,8 +24,7 @@ export default defineConfig({
     emptyOutDir: true,
     rollupOptions: {
       input: {
-        portfolio: fileURLToPath(new URL("./index.html", import.meta.url)),
-        editor: fileURLToPath(new URL("./editeur.html", import.meta.url))
+        portfolio: fileURLToPath(new URL("./index.html", import.meta.url))
       }
     }
   }

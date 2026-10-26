@@ -18,31 +18,25 @@ Tu n’as pas besoin de Node.js pour cette première publication : les fichiers 
 
 GitHub Pages peut prendre quelques minutes à publier les changements. Le dépôt et le site sont deux adresses différentes : partage l’adresse `github.io` pour montrer le portfolio.
 
-## Ajouter des projets, des certificats ou un nouveau CV
+## Ajouter des projets et certificats : atelier local uniquement
 
-1. Sur ton portfolio publié, clique sur **Préparer une fiche**, en bas de page. L’atelier est aussi accessible à l’adresse `…/portfolio/editeur.html`.
-2. Ajoute ou modifie tes fiches. Tu peux joindre une image de projet, une attestation ou un PDF, et remplacer la photo ou le CV dans **Mon profil**. Les pièces jointes acceptées font au maximum 5 Mo chacune.
-3. Clique sur **Enregistrer**. La préparation reste dans ce navigateur. **Aperçu de ma préparation** permet de la vérifier.
-4. Clique sur **Exporter pour GitHub**. Décompresse `mise-a-jour-portfolio.zip`.
-5. Clique sur **Se connecter sur GitHub pour publier** et connecte-toi avec ton compte **16blo**. Dans ton dépôt GitHub, utilise **Add file → Upload files** et dépose les dossiers **docs** et **public** de cette mise à jour à la racine, en conservant leurs noms. Valide avec **Commit changes**. Pages publiera les nouveaux fichiers.
+L’atelier a été retiré du site public. Pour utiliser les formulaires sur ton ordinateur :
 
-L’export met à jour les données et les pièces jointes des deux dossiers. **Aucune compilation n’est nécessaire pour ces ajouts de contenu.** Le code du design reste en place.
+1. Ouvre le projet dans VSCodium et lance `npm ci`, puis `npm run dev`.
+2. Ouvre l’adresse locale affichée par Vite, puis `/editeur.html` sur cette adresse.
+3. Prépare tes fiches, sauvegarde-les et vérifie leur aperçu local.
+4. Exporte la mise à jour pour GitHub et décompresse le ZIP.
+5. Connecte-toi à ton compte GitHub autorisé, dépose les dossiers `docs` et `public` dans le dépôt et valide avec « Commit changes ».
 
-L’atelier ne possède aucun accès à ton compte GitHub. Il prépare une copie dans le navigateur de la personne qui l’ouvre ; seuls les utilisateurs autorisés sur ton dépôt peuvent publier des changements. Il ne s’agit pas d’un espace d’administration connecté à un serveur.
+Les visiteurs du site ne disposent d’aucun formulaire de modification. Le code et les données publiées restent lisibles car le dépôt est public ; cela ne confère aucun droit de publication.
 
-### Sauvegardes et brouillons
-
-**Sauvegarde privée** télécharge un fichier JSON contenant toute la préparation, les pièces jointes ajoutées et les brouillons. **Importer une sauvegarde** permet de la reprendre sur un autre appareil. Garde ce fichier sur ton ordinateur ; ne le dépose pas dans le dépôt public.
-
-Les modifications sont conservées avec IndexedDB dans le navigateur utilisé. Effacer les données du navigateur, utiliser la navigation privée ou changer d’appareil peut les faire perdre. Télécharge ta sauvegarde avant de changer d’appareil.
-
-Les fiches décochées **Visible** et leurs nouvelles pièces jointes sont exclues de l’export de publication. Un fichier déjà publié peut rester dans le dépôt et dans son historique : le passer ensuite en brouillon ne rend pas rétroactivement ce fichier privé.
+Conserve tes sauvegardes privées sur ton appareil, en dehors du dépôt public. L’atelier ne contient aucun mot de passe ni jeton GitHub. Il conserve les préparations dans le navigateur de ton ordinateur et exclut les brouillons de l’export public.
 
 ## Connexion et sécurité
 
 Le bouton **Accès propriétaire · GitHub** mène à la publication sur GitHub. La connexion, la session et les droits d’écriture sont vérifiés par GitHub sur ses serveurs. Aucun formulaire du portfolio ne demande ton mot de passe ou un jeton GitHub. Si tu es déjà connecté à GitHub, il peut ne pas te redemander de mot de passe.
 
-L’atelier reste un outil de préparation locale accessible publiquement. L’ouvrir ne donne aucun droit de publication. Chaque visiteur prépare sa propre copie ; il ne peut pas modifier le site de Yann sans droit d’écriture sur le dépôt.
+L’atelier est uniquement accessible sur le serveur de développement local, pas sur GitHub Pages. Il est exclu de la compilation publique. Le bouton « Accès propriétaire · GitHub » ne donne pas de droits : GitHub vérifie la connexion et l’autorisation d’écriture.
 
 Le site publié charge seulement ses scripts et ses données depuis sa propre origine. La politique CSP bloque les scripts en ligne, les scripts externes, les objets embarqués et les envois de formulaires. Les pièces jointes sont limitées en taille et leur signature est vérifiée lors de l’ajout et de l’import. Les textes sont rendus par React sans insertion de HTML arbitraire.
 
@@ -89,7 +83,7 @@ git push -u origin main
 | Photo, CV, pièces jointes | `public/images`, `public/cv`, `public/uploads` et leurs copies dans `docs` |
 | Interface du portfolio | `src/portfolio.tsx` |
 | Styles, thèmes clair et sombre, version mobile | `src/style.css` |
-| Atelier de mise à jour | `src/editor.tsx` |
+| Atelier local, absent du site public | `src/editor.tsx`, `src/editor-main.tsx`, `editeur.html` |
 | Sauvegarde locale et import | `src/workspace.ts` |
 | Export ZIP pour GitHub | `src/zip.ts` |
 | Validation du contenu et filtrage des brouillons | `src/validation.ts` |

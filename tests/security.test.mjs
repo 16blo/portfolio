@@ -87,10 +87,18 @@ test("publication exports omit private draft content and attachments", async () 
   } finally { globalThis.fetch = previousFetch; }
 });
 test("compiled pages contain the production security policy before scripts", () => {
-  for (const page of ["index.html", "editeur.html"]) {
+  for (const page of ["index.html"]) {
     const html = fs.readFileSync(`docs/${page}`, "utf8").replaceAll("&#39;", "'");
     assert.ok(html.indexOf("Content-Security-Policy") < html.indexOf("<script"));
     for (const directive of ["script-src 'self'", "connect-src 'self'", "object-src 'none'", "form-action 'none'"]) assert.ok(html.includes(directive));
     assert.ok(!html.includes("unsafe-eval")); assert.ok(html.includes('name="referrer" content="no-referrer"'));
   }
+});
+
+test("public build excludes the editor and local workspace", () => {
+  assert.equal(fs.existsSync("docs/editeur.html"), false);
+  const html = fs.readFileSync("docs/index.html", "utf8");
+  const scripts = fs.readdirSync("docs/assets").filter(x => x.endsWith(".js")).map(x => fs.readFileSync("docs/assets/"+x,"utf8")).join("");
+  assert.ok(!html.includes("editeur.html"));
+  for (const marker of ["Importer une sauvegarde", "yann-portfolio-workspace-v1", "Préparer une fiche", "Ajouter un projet"]) assert.ok(!scripts.includes(marker),marker);
 });

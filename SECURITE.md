@@ -6,7 +6,7 @@ Revue du 25 octobre 2026. Périmètre : code du site statique, préparation loca
 
 Le portfolio est public. **GitHub assure l’authentification et contrôle les droits d’écriture sur le dépôt `16blo/portfolio`.** Le bouton « Accès propriétaire · GitHub » ouvre la page de publication sur le domaine officiel GitHub. Le propriétaire et les éventuels collaborateurs disposant du droit d’écriture peuvent publier. Un visiteur public peut lire le code ou proposer une contribution ; cela ne lui donne pas le droit de modifier la branche publiée.
 
-L’atelier `editeur.html` est un outil de préparation locale, accessible publiquement. Il ne comporte aucun endpoint d’écriture vers le site et ne détient aucun jeton. Modifier sa copie locale ou contourner son interface ne permet donc pas de publier. La vérification des droits a lieu sur les serveurs GitHub, au moment du dépôt des fichiers et de la validation du commit.
+L’atelier `editeur.html` est désormais réservé au serveur de développement local (`npm run dev`). Il est exclu de la compilation GitHub Pages et ne figure plus sur le site public. Il ne comporte aucun endpoint d’écriture vers le site et ne détient aucun jeton. Modifier sa copie locale ou contourner son interface ne permet donc pas de publier. La vérification des droits a lieu sur les serveurs GitHub, au moment du dépôt des fichiers et de la validation du commit.
 
 Un dépôt public rend son contenu et son historique consultables : aucun secret ni brouillon privé ne doit y être ajouté. Les exportations de publication excluent les fiches en brouillon et leurs nouvelles pièces jointes. Un document déjà publié peut rester dans l’historique même après son retrait du site.
 
@@ -37,7 +37,7 @@ Les styles en ligne restent autorisés pour le rendu de l’interface. L’autor
 
 ## Résultat des contrôles locaux
 
-La compilation TypeScript et Vite a réussi. Les 14 tests de sécurité ont réussi. La dépendance Zod a été mise à jour de 3.25.76 à 4.6.7 pour corriger l’avis [GHSA-mrhx-c7xc-m3w5](https://github.com/advisories/GHSA-mrhx-c7xc-m3w5).
+La compilation TypeScript et Vite a réussi. Les tests de sécurité vérifient aussi l’absence de l’atelier et du stockage local dans la compilation publique. La dépendance Zod a été mise à jour de 3.25.76 à 4.6.7 pour corriger l’avis [GHSA-mrhx-c7xc-m3w5](https://github.com/advisories/GHSA-mrhx-c7xc-m3w5).
 
 L’outil de compilation Vite a également été mis à jour de 8.0.13 à 8.3.5 après le signalement de son ancienne version par npm audit.
 
